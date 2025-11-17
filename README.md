@@ -1,6 +1,10 @@
-# TOON Format for Zig
+# zig-toon
 
 Spec-compliant Zig implementation of [TOON v2.0](https://github.com/toon-format/spec) - a compact format for LLM data transfer.
+
+Token-Oriented Object Notation is a compact, human-readable format designed for passing structured data to Large Language Models with significantly reduced token usage.
+
+TOON excels at uniform complex objects – multiple fields per row, same structure across items. It borrows YAML's indentation-based structure for nested objects and CSV's tabular format for uniform data rows, then optimizes both for token efficiency in LLM contexts.
 
 ## Quick Example
 
@@ -19,15 +23,15 @@ users[2]{id,name}:
 ## Installation
 
 ```bash
-git clone https://github.com/your-org/toon-zig
-cd toon-zig
+git clone https://github.com/caiocdcs/zig-toon
+cd zig-toon
 zig build
 ```
 
 ## Usage
 
 ```zig
-const toon = @import("toon_zig");
+const toon = @import("zig_toon");
 
 // Encode
 const encoded = try toon.encode(allocator, value, .{});
