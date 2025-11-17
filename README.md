@@ -97,8 +97,6 @@ const Config = struct {
 };
 ```
 
-See `examples/decode_into.zig` for more examples.
-
 ## License
 
 MIT
